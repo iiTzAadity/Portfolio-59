@@ -38,7 +38,7 @@ export default function Certifications() {
   return (
     <Section id="certs" title="Certificates & Awards" subtitle="Carousel with hover-to-preview popup.">
       <div className="relative overflow-hidden">
-        <div className="flex animate-[marquee_25s_linear_infinite] gap-4 whitespace-nowrap will-change-transform">
+        <div className="flex animate-[marquee_40s_linear_infinite] md:animate-[marquee_30s_linear_infinite] lg:animate-[marquee_25s_linear_infinite] gap-4 whitespace-nowrap will-change-transform">
           {Array.from({ length: 2 }).map((_, loop) =>
             certs.map((c, i) => {
               const idx = loop * certs.length + i
@@ -46,7 +46,7 @@ export default function Certifications() {
               return (
                 <div
                   key={`${loop}-${i}`}
-                  className="relative inline-flex h-40 w-60 cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 backdrop-blur transition-colors hover:bg-white/10"
+                  className="relative inline-flex h-[140px] w-[200px] sm:h-[160px] sm:w-[220px] md:h-[160px] md:w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 backdrop-blur transition-colors hover:bg-white/10 min-h-[44px] min-w-[44px]"
                   onMouseEnter={() => setHoverIdx(idx)}
                   onMouseLeave={() => setHoverIdx(null)}
                   onTouchStart={() => setHoverIdx(idx)}
@@ -59,11 +59,10 @@ export default function Certifications() {
                     className="h-full w-full rounded-xl object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-2 left-2 right-2 truncate rounded-md bg-black/40 px-2 py-1 text-xs text-white backdrop-blur">
+                  <div className="absolute bottom-2 left-2 right-2 truncate rounded-md bg-black/40 px-2 py-1 text-xs sm:text-sm text-white backdrop-blur">
                     {c.title}
                   </div>
 
-                  {/* Popup: centered above this card, fits whole image (object-contain), smooth fade-zoom */}
                   <AnimatePresence>
                     {active && (
                       <motion.div
@@ -76,7 +75,7 @@ export default function Certifications() {
                           <img
                             src={c.full || "/placeholder.svg"}
                             alt={`${c.title} preview`}
-                            className="h-auto w-auto max-h-[70vh] max-w-[90vw] md:max-w-[720px] rounded-md object-contain"
+                            className="h-auto w-auto max-h-[50vh] max-w-[85vw] sm:max-h-[60vh] sm:max-w-[90vw] md:max-h-[70vh] md:max-w-[720px] rounded-md object-contain"
                             loading="lazy"
                           />
                         </div>
@@ -88,13 +87,14 @@ export default function Certifications() {
             }),
           )}
         </div>
-
-        {/* Fallback for very small viewports with coarse pointers:
-            Keep behavior lightweight and responsive by showing the same popup anchored to the card.
-            The max-w / max-h constraints ensure the full certificate is fully visible without cropping. */}
       </div>
 
-      <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
+      <style>{`
+        @keyframes marquee { 
+          from { transform: translateX(0); } 
+          to { transform: translateX(-50%); } 
+        }
+      `}</style>
     </Section>
   )
 }
