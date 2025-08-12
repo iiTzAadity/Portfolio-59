@@ -186,7 +186,11 @@ export default function Projects() {
   }, [])
 
   return (
-    <Section id="projects" title="Projects" subtitle="3D tilt previews with smooth hover interactions.">
+    <Section
+      id="projects"
+      title="Projects"
+      subtitle="A mix of fun and functional builds — explore the demos and how I approached the problems."
+    >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
           <TiltCard key={p.id} p={p} highlighted={highlightedId === p.id} />

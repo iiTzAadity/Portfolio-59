@@ -91,7 +91,7 @@ export default function Skills() {
     <Section
       id="skills"
       title="Skills"
-      subtitle="Clean, animated skill cards. Categories with smooth fades and slides."
+      subtitle="Hands-on skills from real builds — from pixel-perfect UI to API wiring and version control that keeps it clean."
     >
       <Tabs defaultValue="technical" className="w-full">
         <TabsList className="mb-6 border border-white/10 bg-white/10 backdrop-blur">

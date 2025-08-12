@@ -77,7 +77,11 @@ export default function Experience() {
   }, [])
 
   return (
-    <Section id="experience" title="Experience" subtitle="Alternating timeline with neon markers — perfectly aligned.">
+    <Section
+      id="experience"
+      title="Experience"
+      subtitle="From contribution to delivery — bug-fixes, UI revamps, and feedback-driven improvements across devices."
+    >
       <div ref={wrapperRef} className="relative mx-auto max-w-5xl">
         {/* Center vertical timeline (desktop only) */}
         <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-[2px] -translate-x-1/2 bg-gradient-to-b from-fuchsia-400/70 via-violet-400/50 to-cyan-300/70 md:block" />

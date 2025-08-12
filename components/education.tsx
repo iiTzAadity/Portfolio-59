@@ -78,7 +78,11 @@ export default function Education() {
   }, [])
 
   return (
-    <Section id="education" title="Education" subtitle="A responsive horizontal timeline.">
+    <Section
+      id="education"
+      title="Education"
+      subtitle="Strong fundamentals from BCA + ongoing MCA — turning coursework into practical projects and real-world skills."
+    >
       <div ref={scrollRef} className="relative overflow-x-auto">
         <div ref={trackRef} className="relative min-w-[720px] px-2 py-16">
           {/* Center neon horizontal line */}

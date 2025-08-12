@@ -10,7 +10,11 @@ export default function About() {
   const [useGifFallback, setUseGifFallback] = useState(false)
 
   return (
-    <Section id="about" title="About Me" subtitle="Confident intro and quick facts in a glassy, neon style.">
+    <Section
+      id="about"
+      title="About Me"
+      subtitle="Open-source fixer + project builder — I enjoy polishing UX, debugging hard bugs, and shipping neat details."
+    >
       <div className="grid items-start gap-8 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
